@@ -10,15 +10,16 @@ class Professor(Base):
     ProfessorID = Column(Integer, primary_key=True, autoincrement=True)
 
     # 40 = max length of string
-    FirstName = Column(String(40))
-    LastName = Column(String(40))
-    Email = Column(String(100))
+    ProfessorFirstName = Column(String(40))
+    ProfessorLastName = Column(String(40))
+    ProfessorEmailAddress = Column(String(40))
+    CoreSubject = Column(String(40))
 
     # create many to many relationship with courses table through association/join table
     professor_courses = relationship("ProfessorCourse", back_populates="professor")
     courses = relationship("Course", secondary="ProfessorCourses", viewonly=True)
 
     def __repr__(self):
-        return f"""FIRST NAME: {self.FirstName}, LAST NAME: {self.LastName}, EMAIL: {self.Email}
+        return f"""FIRST NAME: {self.ProfessorFirstName}, LAST NAME: {self.ProfessorLastName}, EMAIL: {self.ProfessorEmailAddress}
         """
     
