@@ -35,7 +35,7 @@ def init_database():
     """Initialize database tables"""
     try:
         # import all of the tables
-        from db.schema import Course, Professor, ProfessorCourse
+        from db.schema import Users
         
         # create all of the tables
         Base.metadata.create_all(bind=engine)

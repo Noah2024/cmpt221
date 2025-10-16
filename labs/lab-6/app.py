@@ -3,10 +3,9 @@
 import os
 from dotenv import load_dotenv
 from flask import Flask, render_template
-from db.server import init_database, get_session
-from db.schema import Course, Professor, ProfessorCourse
-from db.sql import insert_courses, get_all_courses, update_course, delete_course
-from db.orm import insert_professors, get_all_professors, update_professor, delete_professor
+from db.query import get_all
+from db.server import init_database
+from db.schema import Users
 
 # load environment variables from .env
 load_dotenv()
@@ -42,33 +41,33 @@ def create_app():
     def index():
         """Home page"""
         return render_template('index.html')
-
-    @app.route('/sql')
-    def sql():
-        insert_courses()
-        courses = get_all_courses()
-        update_course() 
-        delete_course()
-
-        # print the table to the console
-        courses = get_all_courses()
-        for course in courses:
-            print(course)
-
-        return "I managed the Courses table using raw SQL!"
     
-    @app.route('/orm')
-    def orm():
-        insert_professors()
-        update_professor() 
-        delete_professor()
+    @app.route('/signup')
+    def signup():
+        """Sign up page: enables users to sign up"""
+        #TODO: implement sign up logic here
 
-        # print the table to the console
-        professors = get_all_professors()
-        for professor in professors:
-            print(professor)
+        return render_template('signup.html')
+    
+    @app.route('/login')
+    def login():
+        """Log in page: enables users to log in"""
+        # TODO: implement login logic here
 
-        return "I managed the Professors table using the SQLAlchemy ORM!"
+        return render_template('login.html')
+
+    @app.route('/users')
+    def users():
+        """Users page: displays all users in the Users table"""
+        all_users = get_all(Users)
+        
+        return render_template('users.html', users=all_users)
+
+    @app.route('/success')
+    def success():
+        """Success page: displayed upon successful login"""
+
+        return render_template('success.html')
 
     return app
 
