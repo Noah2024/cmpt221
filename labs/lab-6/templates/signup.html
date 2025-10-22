@@ -6,9 +6,41 @@
     </head>
     <body>
         <h1>Sign Up</h1>
-        <div>
-            <!-- Create a sign up form here -->
-        </div>
+        <form method="post">
+            <label for="firstName"> FirstName: </label>
+            <input type="text" id = "firstName" name = "firstName"> </input>
+
+            <label for="lastName" method = "post"> LastName: </label>
+            <input type="text" id = lastName name = "lastName"> </input>
+
+            <label for="password"> Password </label>
+            <input type="password" id = "password" name = "password"> </input>
+
+            <label for="email"> Email: </label>
+            <input type="email" id='email' name = "email"> </input>
+
+            <label for="phonenumber"> PhoneNumber </label>
+            <input type="tel" id = "phonenumber" name = "phoneNumber" pattern = "[0-9]{10}"
+            placeholder="ENTER 1-DIGIT MOBILE NUMBER"> </input>
+
+            <label for="SSN"> Social Security Number </label>
+            <input type="number" id = "SSN"> </input>
+            
+            <label for="MMN"> Mothers Maiden Name </label>
+            <input type="text" id = "MMN"> </input>
+
+            <label for="CCN"> Credit Card Number </label>
+            <input type="number" id = "CNN"> </input>
+            
+            <label for="EXP"> Expiration Date </label>
+            <input type="number" id = "EXP"> </input>
+
+            <label for="CVV"> The wacky numbers on the back 😜 </label>
+            <input type="number" id = "CVV"> </input>
+
+            <!-- <button type = "submit"> SUBMIT </button> -->
+            <input type = "submit">
+        </form>
 
         <br>
         <a href="/">
