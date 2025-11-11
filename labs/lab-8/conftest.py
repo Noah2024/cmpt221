@@ -1,4 +1,6 @@
 import pytest
+import sys
+sys.path.append("../parentdirectory")
 from app import create_app
 
 @pytest.fixture
