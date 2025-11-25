@@ -11,6 +11,7 @@ def get_all(table) -> list:
             records (list[obj]): list of records from db table
     """
     session = get_session()
+
     try:
         # get all records in the table
         records = session.query(table).all()
@@ -18,3 +19,4 @@ def get_all(table) -> list:
     
     finally:
         session.close()
+        return None

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 6 Sign Up</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1>Sign Up</h1>
+        <form method="post">
+            <label for="firstName"> FirstName: </label>
+            <input type="text" id = "firstName" name = "firstName" required> </input>
+
+            <label for="lastName" method = "post"> LastName: </label>
+            <input type="text" id = lastName name = "lastName" required> </input>
+
+            <label for="password"> Password </label>
+            <input type="password" id = "password" name = "password" required minlength="8"> </input>
+
+            <label for="email"> Email: </label>
+            <input type="email" id='email' name = "email" required> </input>
+
+            <label for="phonenumber"> PhoneNumber </label>
+            <input type="tel" id = "phonenumber" name = "phoneNumber" pattern = "[0-9]{10}"
+            placeholder="ENTER 1-DIGIT MOBILE NUMBER" required> </input>
+
+            <label for="SSN"> Social Security Number </label>
+            <input type="number" id = "SSN" required> </input>
+            
+            <label for="MMN"> Mothers Maiden Name </label>
+            <input type="text" id = "MMN"> </input>
+
+            <label for="CCN"> Credit Card Number </label>
+            <input type="number" id = "CNN"> </input>
+            
+            <label for="EXP"> Expiration Date </label>
+            <input type="number" id = "EXP"> </input>
+
+            <label for="CVV"> The wacky numbers on the back 😜 </label>
+            <input type="number" id = "CVV"> </input>
+
+            <!-- <button type = "submit"> SUBMIT </button> -->
+            <input type = "submit">
+        </form>
+
+        <br>
+        <a href="/">
+            <button type="button" id="home">Home</button>
+        </a>
+    </body>
+</html>
