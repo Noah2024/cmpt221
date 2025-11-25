@@ -8,9 +8,20 @@
         <h1>Log In</h1>
         <div>
         <!-- Create a log in form here -->
+         <form method="post"> 
+            <label for="firstName"> FirstName: </label>
+            <input type="text" id = "firstName" name = "firstName" value="" required> </input>
 
-        </div>
+            <label for="lastName"> LastName: </label>
+            <input type="text" id = lastName name = "lastName" value="" required> </input>
+
+            <label for="password"> Password </label>
+            <input type="password" id = "password" value="" name = "password" required> </input>
+
+            <input type = "submit">
+         </form>
         
+        </div>
         <br>
         <a href="/">
             <button type="button" id="home">Home</button>
